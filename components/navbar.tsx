@@ -7,12 +7,12 @@ import { Menu, X, Construction, Calendar } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Team", href: "/team" },
-  { name: "Leaderboard", href: "/leaderboard" },
   { name: "Events", href: "/events" },
-  { name: "Upcoming Events", href: "/upcoming-events", icon: Calendar },
-  { name: "FAQ", href: "/faq" },
+  { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Team", href: "/team" },
   { name: "Resources", href: "/resources", wip: true },
+  { name: "FAQ", href: "/faq" },
+  { name: "Upcoming Events", href: "/upcoming-events", icon: Calendar },
 ]
 
 export default function Navbar() {
