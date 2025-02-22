@@ -3,13 +3,34 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import type { Metadata } from "next"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Developer Club",
   description: "A student-run tech club passionate about coding and innovation",
-    generator: 'v0.dev'
+  icons: {
+    icon: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -28,6 +49,3 @@ export default function RootLayout({
   )
 }
 
-
-
-import './globals.css'
