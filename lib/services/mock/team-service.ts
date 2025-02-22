@@ -20,7 +20,7 @@ export class MockTeamService implements TeamService {
           id: "7",
           name: "Manender Dutt",
           role: "Faculty Coordinator",
-          image: "/placeholder.svg",
+          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pppp.jpg-t3ZhRU1e8K3a4pPWIO11P1jmTjfpkR.jpeg",
           categoryId: "faculty-coordinators",
           social: { linkedin: "https://www.linkedin.com/in/manender-dutt/" },
         },
