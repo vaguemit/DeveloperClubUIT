@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Linkedin, DiscIcon as Discord } from "lucide-react"
+import Image from "next/image"
+import { Linkedin } from "lucide-react"
 import { siteConfig } from "@/config/site"
 
 export default function Footer() {
@@ -13,7 +14,7 @@ export default function Footer() {
             </Link>
             <p className="mt-2 text-gray-400">Empowering the next generation of innovators</p>
           </div>
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 items-center">
             <Link
               href={siteConfig.links.linkedin}
               className="text-gray-400 hover:text-white transition-colors"
@@ -28,7 +29,13 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Discord size={24} />
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/discord-white-icon-J2x2ILqMsMni1AE6Tol39XrVfnzuaK.png"
+                alt="Discord"
+                width={24}
+                height={24}
+                className="opacity-70 hover:opacity-100 transition-opacity"
+              />
             </Link>
           </div>
         </div>
