@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20">
+    <section className="relative min-h-[80vh] flex items-center justify-center py-20">
       {/* Grid Background */}
       <div
         className="absolute inset-0 z-0"
@@ -91,7 +91,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-4"
           >
             <Link
               href="/leaderboard"
@@ -105,30 +105,6 @@ export default function Hero() {
             >
               Events
             </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="grid md:grid-cols-2 gap-8"
-          >
-            <div className="bg-zinc-800/50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">For Competitive Programmers</h3>
-              <ul className="text-gray-400 text-left space-y-2">
-                <li>• Tackle algorithmic challenges on CodeForces, LeetCode, and more</li>
-                <li>• Participate in coding contests and climb the leaderboard</li>
-                <li>• Improve your problem-solving skills with expert mentorship</li>
-              </ul>
-            </div>
-            <div className="bg-zinc-800/50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">For Web Developers</h3>
-              <ul className="text-gray-400 text-left space-y-2">
-                <li>• Build real-world projects using the latest web technologies</li>
-                <li>• Learn full-stack development with hands-on workshops</li>
-                <li>• Collaborate on open-source projects and expand your portfolio</li>
-              </ul>
-            </div>
           </motion.div>
         </div>
       </div>
