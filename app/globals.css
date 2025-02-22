@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+@font-face {
+  font-family: "PixelFont";
+  src: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lvIkBmWxMm6bn1xv1Nha1N5snzllGP.png")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  body {
+    @apply text-white bg-black;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400;
+}
+
+.hover-underline {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg;
+}
+
