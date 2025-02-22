@@ -9,21 +9,24 @@ import type { TeamCategory } from "@/types"
 import { ServiceProvider } from "@/lib/services/service-provider"
 
 const shimmer = (w: number, h: number) => `
-<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="g">
-      <stop stop-color="#333" offset="20%" />
-      <stop stop-color="#222" offset="50%" />
-      <stop stop-color="#333" offset="70%" />
-    </linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="#333" />
-  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
+<rect width="${w}" height="${h}" fill="#1f1f1f" />
+<rect id="r" width="${w}" height="${h}" fill="#333" />
 </svg>`
 
 const toBase64 = (str: string) =>
   typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str)
+
+// Add a helper function to determine custom image positioning
+const getImageStyle = (memberId: string) => {
+  if (memberId === "6") {
+    // Deepansh Raj's ID
+    return {
+      objectPosition: "center 20%", // Adjust this value to move the image up or down
+    }
+  }
+  return {}
+}
 
 export default function TeamSection() {
   const [categories, setCategories] = useState<TeamCategory[]>([])
@@ -55,9 +58,9 @@ export default function TeamSection() {
             <h2 className="text-4xl font-bold mb-4">Our Team</h2>
             <p className="text-gray-400">Loading team members...</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto animate-pulse">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-zinc-800/50 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {[1, 2].map((i) => (
+              <div key={i} className="bg-zinc-800/50 rounded-lg overflow-hidden animate-pulse">
                 <div className="aspect-square bg-zinc-700/50" />
                 <div className="p-4">
                   <div className="h-6 bg-zinc-700/50 rounded w-2/3 mb-2" />
@@ -93,25 +96,33 @@ export default function TeamSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-zinc-900/50 rounded-lg overflow-hidden border border-zinc-800"
                 >
-                  <div className="aspect-square relative">
+                  <div className="aspect-square relative bg-zinc-800">
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{
+                        objectFit: "cover",
+                        ...getImageStyle(member.id),
+                      }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                       placeholder="blur"
-                      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 700))}`}
-                      priority={index < 4} // Prioritize loading first 4 images
+                      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(8, 8))}`}
+                      priority={index === 0 || (category.id === "dsa-cp" && member.name === "Mit Parikh")}
+                      quality={90}
                     />
                   </div>
                   <div className="p-4 flex items-end justify-between">
                     <div>
                       <h4 className="font-semibold text-lg">{member.name}</h4>
                       <p className="text-gray-400 text-sm">
+                        {member.role === "DSA and CP Lead" && "DSA and CP Lead 🏆"}
                         {member.role === "Web Development Lead" && "Web Development Lead 🚀"}
                         {member.role === "Faculty Coordinator" && "Faculty Coordinator 👨‍🏫"}
-                        {member.role !== "Web Development Lead" && member.role !== "Faculty Coordinator" && member.role}
+                        {member.role !== "DSA and CP Lead" &&
+                          member.role !== "Web Development Lead" &&
+                          member.role !== "Faculty Coordinator" &&
+                          member.role}
                       </p>
                     </div>
                     <div className="flex gap-2">

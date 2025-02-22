@@ -11,7 +11,8 @@ export class MockTeamService implements TeamService {
           id: "6",
           name: "Deepansh Raj",
           role: "Faculty Coordinator",
-          image: "/placeholder.svg",
+          image:
+            "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-22%20at%2013.08.43_3a9eee92.jpg-U9rHTZIC3LoQa1fyhWqOtehAHzGL7D.jpeg", // Updated Deepansh Raj's photo
           categoryId: "faculty-coordinators",
           social: { linkedin: "https://www.linkedin.com/in/deepansh-raj-66490514a/" },
         },
@@ -66,7 +67,8 @@ export class MockTeamService implements TeamService {
           id: "3",
           name: "Mit Parikh",
           role: "DSA and CP Lead",
-          image: "/placeholder.svg",
+          image:
+            "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picsart_25-02-22_02-42-29-861%20(1).jpg-ZQ5zxDlfRSYQEZ5YF8N09I6UfWo0Vx.jpeg",
           categoryId: "dsa-cp",
           social: {
             github: "https://github.com/vaguemit",

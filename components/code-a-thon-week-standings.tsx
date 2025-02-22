@@ -1,6 +1,6 @@
 import type React from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Medal } from "lucide-react"
+import { Medal, Expand, ChevronDown } from "lucide-react"
 
 interface Participant {
   rank: number
@@ -10,12 +10,32 @@ interface Participant {
 interface CodeAThonWeekStandingsProps {
   participants: Participant[]
   eventName: string
+  onExpand: () => void
+  isExpanded: boolean
 }
 
-const CodeAThonWeekStandings: React.FC<CodeAThonWeekStandingsProps> = ({ participants, eventName }) => {
+const CodeAThonWeekStandings: React.FC<CodeAThonWeekStandingsProps> = ({
+  participants,
+  eventName,
+  onExpand,
+  isExpanded,
+}) => {
+  const displayedParticipants = isExpanded ? participants : participants.slice(0, 6)
+
   return (
     <div className="bg-black border border-gray-900 p-6 rounded-lg">
-      <h2 className="text-2xl font-bold text-gray-300 mb-6">{eventName} Standings</h2>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold text-gray-300">{eventName} Standings</h2>
+        {!isExpanded && (
+          <button
+            onClick={onExpand}
+            className="text-gray-400 hover:text-white transition-colors"
+            title="Expand standings"
+          >
+            <Expand size={20} />
+          </button>
+        )}
+      </div>
       <div className="overflow-x-auto">
         <Table>
           <TableHeader>
@@ -25,7 +45,7 @@ const CodeAThonWeekStandings: React.FC<CodeAThonWeekStandingsProps> = ({ partici
             </TableRow>
           </TableHeader>
           <TableBody>
-            {participants.map((participant, index) => (
+            {displayedParticipants.map((participant, index) => (
               <TableRow key={index} className="hover:bg-gray-900 transition-colors border-b border-gray-900">
                 <TableCell className="font-medium text-gray-300">
                   <div className="flex items-center gap-2">
@@ -49,6 +69,16 @@ const CodeAThonWeekStandings: React.FC<CodeAThonWeekStandingsProps> = ({ partici
           </TableBody>
         </Table>
       </div>
+      {!isExpanded && participants.length > 6 && (
+        <div className="mt-4 text-center">
+          <button
+            onClick={onExpand}
+            className="text-blue-500 hover:text-blue-400 transition-colors flex items-center justify-center mx-auto"
+          >
+            Show more <ChevronDown className="ml-1" size={16} />
+          </button>
+        </div>
+      )}
     </div>
   )
 }

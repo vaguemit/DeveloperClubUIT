@@ -5,216 +5,31 @@ import EventsMenu from "@/components/events-menu"
 import CodeAThonLeaderboard from "@/components/code-a-thon-leaderboard"
 import CodeAThonWeekStandings from "@/components/code-a-thon-week-standings"
 import EventPhotos from "@/components/event-photos"
+import FullScreenModal from "@/components/full-screen-modal"
 import { motion, AnimatePresence } from "framer-motion"
 
 const events = [
-  { id: 1, name: "Code-A-Thon Round 1", date: "October 15, 2024" },
-  { id: 2, name: "Code-A-Thon Round 2", date: "October 17, 2024" },
-  { id: 3, name: "Code-A-Thon Week 1", date: "January 7, 2025" },
-  { id: 4, name: "Code-A-Thon Week 2", date: "January 29, 2025" },
-  { id: 5, name: "Code-A-Thon Week 3", date: "February 5, 2025" },
-  { id: 6, name: "Code-A-Thon Week 4", date: "February 19, 2025" },
-]
-
-const week1Data = [
-  { rank: 1, name: "Justarookie12" },
-  { rank: 2, name: "Manthan14" },
-  { rank: 3, name: "MeetSavlani" },
-  { rank: 4, name: "RAZV3ER" },
-  { rank: 5, name: "anujgoyalaman" },
-  { rank: 6, name: "jax_afk" },
-  { rank: 7, name: "parthrajsinh_gohil" },
-  { rank: 8, name: "kushsaraf" },
-  { rank: 9, name: "202307020118" },
-  { rank: 10, name: "Akash_robo" },
-  { rank: 11, name: "abhii14" },
-  { rank: 12, name: "AGENT_77" },
-  { rank: 13, name: "vansh_494" },
-  { rank: 14, name: "Harsh2020" },
-  { rank: 15, name: "2005_23" },
-  { rank: 16, name: "Vedant81" },
-  { rank: 17, name: "Riaan_2108" },
-  { rank: 18, name: "tanisha_majmundar" },
-  { rank: 19, name: "smit3005" },
-  { rank: 20, name: "RitikaRamwani" },
-  { rank: 21, name: "NirajMatai" },
-  { rank: 22, name: "Utk_1954" },
-  { rank: 23, name: "Palak_Anand" },
-  { rank: 24, name: "anonymous4140p" },
-  { rank: 25, name: "yug_1921" },
-  { rank: 26, name: "202307020030" },
-  { rank: 27, name: "Dipika_18" },
-  { rank: 28, name: "Fancytech" },
-  { rank: 29, name: "Dhyey24" },
-  { rank: 30, name: "Csnister" },
-  { rank: 31, name: "lavina83" },
-  { rank: 32, name: "priti_151106" },
-  { rank: 33, name: "cutesurfer" },
-  { rank: 34, name: "Gag25" },
-  { rank: 35, name: "parul12" },
-  { rank: 36, name: "Aditi_2912" },
-  { rank: 37, name: "naunidhbambah" },
-  { rank: 37, name: "demv07" },
-  { rank: 37, name: "eq7" },
-  { rank: 37, name: "Hirva_Desai" },
-  { rank: 37, name: "adityasinh" },
-  { rank: 37, name: "Sonu_patel02" },
-  { rank: 37, name: "Tirth_Patel_1632" },
-  { rank: 37, name: "Priyansh9898" },
-]
-
-const week2Data = [
-  { rank: 1, name: "kushsaraf" },
-  { rank: 2, name: "Justarookie12" },
-  { rank: 3, name: "MeetSavlani" },
-  { rank: 4, name: "RAZV3ER" },
-  { rank: 5, name: "Manthan14" },
-  { rank: 6, name: "Bhavishya_Sharma_007" },
-  { rank: 7, name: "ved_soni" },
-  { rank: 8, name: "Manandevani" },
-  { rank: 9, name: "shreenath_1696" },
-  { rank: 10, name: "JayswalRiya13" },
-  { rank: 11, name: "jiya_pal" },
-  { rank: 11, name: "Vihaan_ma11" },
-  { rank: 13, name: "priti_151106" },
-  { rank: 14, name: "AnjaliBhalala" },
-  { rank: 15, name: "hetarth2006" },
-  { rank: 16, name: "Mahii_Shah" },
-  { rank: 17, name: "India Keval_1" },
-  { rank: 18, name: "Rudra_Borda" },
-  { rank: 19, name: "kriyanshi24" },
-  { rank: 20, name: "Aditi_2912" },
-  { rank: 21, name: "Agastya_Borana" },
-  { rank: 22, name: "AGENT_77" },
-  { rank: 23, name: "Rish164" },
-  { rank: 24, name: "Rudra1528" },
-  { rank: 25, name: "akshay_chauhan" },
-  { rank: 26, name: "Furi_ous007" },
-  { rank: 27, name: "kviin_20" },
-  { rank: 28, name: "dharmik2007" },
-  { rank: 29, name: "Preyas_Thaker" },
-  { rank: 30, name: "RitikaRamwani" },
-  { rank: 31, name: "KU2407U655" },
-  { rank: 32, name: "ronaldo_is_goat" },
-  { rank: 33, name: "Videh" },
-  { rank: 34, name: "anujgoyalaman" },
-  { rank: 35, name: "tanisha_majmundar" },
-  { rank: 36, name: "Palak_Anand" },
-  { rank: 37, name: "Akash_robo" },
-  { rank: 38, name: "Vanshbhatt25" },
-  { rank: 39, name: "Abhijay301" },
-  { rank: 40, name: "tusharsharma9372" },
-  { rank: 41, name: "satyam200403" },
-  { rank: 42, name: "vrajsavani" },
-  { rank: 42, name: "dharmik00" },
-  { rank: 44, name: "demv07" },
-  { rank: 45, name: "kummmkummm" },
-  { rank: 46, name: "sakinanana" },
-  { rank: 47, name: "NirajMatai" },
-  { rank: 48, name: "Hetansh7722" },
-  { rank: 49, name: "sidhu-siddhesh" },
-  { rank: 50, name: "saachi_yadav" },
-  { rank: 51, name: "Avani_20" },
-  { rank: 52, name: "Nilesh_1014" },
-  { rank: 53, name: "anupam26" },
-  { rank: 54, name: "ku2407u313" },
-  { rank: 55, name: "saumyaadhyaru" },
-  { rank: 56, name: "vansh_494" },
-  { rank: 56, name: "nigam1234" },
-  { rank: 58, name: "anonymous4140p" },
-  { rank: 59, name: "simplytoxik" },
-  { rank: 60, name: "TejasThacker" },
-  { rank: 61, name: "Sonu_patel02" },
-  { rank: 62, name: "UnnatiThakur" },
-  { rank: 62, name: "PrimisOnStage" },
-  { rank: 62, name: "mihir_kalra" },
-  { rank: 62, name: "Dhruv_Soni_11" },
-  { rank: 62, name: "Hirva_Desai" },
-  { rank: 62, name: "lavina83" },
-  { rank: 62, name: "Fancytech" },
-  { rank: 62, name: "Kritika98" },
-  { rank: 62, name: "India ku2407u596" },
-  { rank: 62, name: "ku2407u670" },
-  { rank: 62, name: "Dipika_18" },
-]
-
-const week3Data = [
-  { rank: 1, name: "Manthan14" },
-  { rank: 2, name: "MeetSavlani" },
-  { rank: 3, name: "RitikaRamwani" },
-  { rank: 4, name: "RAZV3ER" },
-  { rank: 5, name: "Rudra1528" },
-  { rank: 6, name: "kushsaraf" },
-  { rank: 7, name: "AGENT_77" },
-  { rank: 8, name: "Aditi_2912" },
-  { rank: 9, name: "omi_patel" },
-  { rank: 9, name: "Vanshbhatt25" },
-  { rank: 9, name: "Hetansh7722" },
-  { rank: 12, name: "anujgoyalaman" },
-  { rank: 13, name: "dharmik00" },
-  { rank: 14, name: "satyam200403" },
-  { rank: 15, name: "parthrajsinh_gohil" },
-  { rank: 16, name: "nid_hiiii" },
-  { rank: 17, name: "Niyatiii" },
-  { rank: 18, name: "Dhyey24" },
-  { rank: 19, name: "rehan_khan575" },
-  { rank: 20, name: "yashchavda1601" },
-  { rank: 21, name: "NirajMatai" },
-  { rank: 22, name: "sidhu-siddhesh" },
-  { rank: 23, name: "_Nisarg__" },
-  { rank: 24, name: "phx7597" },
-  { rank: 25, name: "CLASH-CODE12" },
-  { rank: 26, name: "lavina83" },
-  { rank: 27, name: "Sonu_patel02" },
-  { rank: 28, name: "Akash_robo" },
-  { rank: 29, name: "anonymous4140p" },
-  { rank: 30, name: "ku2407u313" },
-  { rank: 31, name: "Dipika_18" },
-  { rank: 31, name: "yashasvi2603" },
-  { rank: 31, name: "TejasThacker" },
-  { rank: 31, name: "eq7" },
-  { rank: 31, name: "vrajsavani" },
-  { rank: 31, name: "cutesurfer" },
-]
-
-const week4Data = [
-  { rank: 1, name: "MeetSavlani" },
-  { rank: 2, name: "Justarookie12" },
-  { rank: 3, name: "Rudra1528" },
-  { rank: 4, name: "Manthan14" },
-  { rank: 5, name: "anonymous4140p" },
-  { rank: 6, name: "kushsaraf" },
-  { rank: 7, name: "AGENT_77" },
-  { rank: 8, name: "tanisha_majmundar" },
-  { rank: 9, name: "Akash_robo" },
-  { rank: 10, name: "Rish164" },
-  { rank: 11, name: "TejasThacker" },
-  { rank: 11, name: "parthrajsinh_gohil" },
-  { rank: 13, name: "cutesurfer" },
-  { rank: 14, name: "Kavy_25" },
-  { rank: 15, name: "RAZV3ER" },
-  { rank: 16, name: "RitikaRamwani" },
-  { rank: 17, name: "yashchavda1601" },
-  { rank: 18, name: "Aditi_2912" },
-  { rank: 19, name: "Sonu_patel02" },
-  { rank: 20, name: "vrajsavani" },
-  { rank: 21, name: "Vedant_81" },
-  { rank: 22, name: "abhii14" },
-  { rank: 23, name: "ku2407u313" },
-  { rank: 24, name: "parul12" },
-  { rank: 25, name: "UnnatiThakur" },
-  { rank: 26, name: "_Nisarg__" },
-  { rank: 27, name: "Fancytech" },
-  { rank: 28, name: "aryanthummar" },
-  { rank: 29, name: "Hirva_Desai" },
-  { rank: 30, name: "anujgoyalaman" },
-]
+  {
+    id: 7,
+    name: "30 Days Code Challenge",
+    date: "August 21, 2024 - September 26, 2024",
+    startDate: new Date("2024-08-21"),
+  },
+  { id: 1, name: "Code-A-Thon Round 1", date: "October 15, 2024", startDate: new Date("2024-10-15") },
+  { id: 2, name: "Code-A-Thon Round 2", date: "October 17, 2024", startDate: new Date("2024-10-17") },
+  { id: 3, name: "Code-A-Thon Week 1", date: "January 7, 2025", startDate: new Date("2025-01-07") },
+  { id: 4, name: "Code-A-Thon Week 2", date: "January 29, 2025", startDate: new Date("2025-01-29") },
+  { id: 5, name: "Code-A-Thon Week 3", date: "February 5, 2025", startDate: new Date("2025-02-05") },
+  { id: 6, name: "Code-A-Thon Week 4", date: "February 19, 2025", startDate: new Date("2025-02-19") },
+].sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
 
 export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(events[0])
   const [leaderboardData, setLeaderboardData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isLeaderboardExpanded, setIsLeaderboardExpanded] = useState(false)
+  const [isPhotosExpanded, setIsPhotosExpanded] = useState(false)
 
   useEffect(() => {
     if (selectedEvent) {
@@ -230,30 +45,20 @@ export default function EventsPage() {
         fetch(fetchUrl)
           .then((response) => response.json())
           .then((data) => {
-            console.log(`Round ${selectedEvent.id} data:`, data)
             const processedData = processLeaderboardData(data)
-            setLeaderboardData(processedData)
-            console.log(`Processed Round ${selectedEvent.id} data:`, processedData)
+            if (selectedEvent.id === 1) {
+              setLeaderboardData(processedData.slice(0, 50))
+            } else {
+              setLeaderboardData(processedData)
+            }
           })
           .catch((error) => {
             console.error(`Error fetching Round ${selectedEvent.id} data:`, error)
             setError(`Failed to load Round ${selectedEvent.id} data`)
           })
           .finally(() => setIsLoading(false))
-      } else if (selectedEvent.id === 3) {
-        setLeaderboardData(week1Data)
-        setIsLoading(false)
-      } else if (selectedEvent.id === 4) {
-        setLeaderboardData(week2Data)
-        setIsLoading(false)
-      } else if (selectedEvent.id === 5) {
-        setLeaderboardData(week3Data)
-        setIsLoading(false)
-      } else if (selectedEvent.id === 6) {
-        setLeaderboardData(week4Data)
-        setIsLoading(false)
       } else {
-        setLeaderboardData([])
+        // For other events, we're not loading data, so just set isLoading to false
         setIsLoading(false)
       }
     }
@@ -277,19 +82,34 @@ export default function EventsPage() {
     setSelectedEvent(event || null)
   }
 
-  const renderLeaderboard = () => {
-    if (selectedEvent?.id === 1 || selectedEvent?.id === 2) {
-      return <CodeAThonLeaderboard participants={leaderboardData} eventName={selectedEvent.name} />
-    } else if (
-      selectedEvent?.id === 3 ||
-      selectedEvent?.id === 4 ||
-      selectedEvent?.id === 5 ||
-      selectedEvent?.id === 6
-    ) {
-      return <CodeAThonWeekStandings participants={leaderboardData} eventName={selectedEvent.name} />
-    } else {
-      return <p className="text-center text-gray-300">No data available for this event yet.</p>
-    }
+  const renderCodeAThonDetails = () => (
+    <div className="space-y-4 mt-6">
+      <h3 className="text-xl font-semibold">Objective</h3>
+      <p>
+        This event promises to be a remarkable catalyst in nurturing a robust coding culture and to bring out the
+        Passionate coders from each year within UIT.
+      </p>
+      <h3 className="text-xl font-semibold">About Code-A-Thon</h3>
+      <p>
+        Code-A-Thon is meticulously designed to empower students, allowing them to refine their coding prowess, nurture
+        their problem-solving abilities, and unleash their boundless creativity. The Code-A-thon will challenge
+        participants to tackle intricate coding problems within a limited timeframe, cultivating critical thinking and
+        the effective application of coding knowledge. The Code-A-Thon will inspire students to compete with their
+        peers, motivating them to strive for coding excellence. Participants will have the golden opportunity to connect
+        with like-minded individuals, exchange innovative ideas, and forge lasting connections. Code-A-Thon welcomes
+        students from all branches and years, fostering diversity and unity among students with varied backgrounds.
+      </p>
+      <h3 className="text-xl font-semibold">Outcome</h3>
+      <p>
+        The Code-A-Thon will sharpen students' coding and problem-solving skills while fostering creativity and
+        collaboration. It offers a chance to compete, connect with peers, and build confidence, leaving participants
+        better prepared for future academic and professional success.
+      </p>
+    </div>
+  )
+
+  const shouldShowPhotos = (eventId: number) => {
+    return eventId === 1 || eventId === 2 || eventId === 3 || eventId === 4
   }
 
   return (
@@ -308,21 +128,162 @@ export default function EventsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="w-full lg:w-3/4 space-y-8"
+                className="w-full lg:w-3/4 flex flex-col lg:flex-row gap-8"
               >
-                {isLoading ? (
-                  <p className="text-center text-gray-300">Loading leaderboard data...</p>
-                ) : error ? (
-                  <p className="text-center text-red-500">{error}</p>
-                ) : (
-                  renderLeaderboard()
+                <div className={`w-full ${shouldShowPhotos(selectedEvent.id) ? "lg:w-2/3" : ""}`}>
+                  {isLoading ? (
+                    <p className="text-center text-gray-300">Loading event data...</p>
+                  ) : error ? (
+                    <p className="text-center text-red-500">{error}</p>
+                  ) : (
+                    <>
+                      {selectedEvent.id === 7 ? (
+                        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+                          <h2 className="text-2xl font-bold text-gray-300 mb-4">{selectedEvent.name}</h2>
+                          <div className="space-y-4">
+                            <p>
+                              <strong>Date:</strong> {selectedEvent.date}
+                            </p>
+                            <p>
+                              <strong>Event Coordinator:</strong> Prof. Manender Dutt
+                            </p>
+                            <p>
+                              <strong>Participants:</strong> 516 (Registered), 127 (Completed)
+                            </p>
+                            <p>
+                              <strong>Mode:</strong> Online (Hackerrank Platform)
+                            </p>
+                            <h3 className="text-xl font-semibold mt-6 mb-2">Program Description</h3>
+                            <p>
+                              The "30 Days Code Challenge" was designed as a month-long initiative to help students
+                              enhance their coding skills by solving a variety of problems across multiple domains,
+                              including algorithms, data structures, web development, and more. Students were required
+                              to solve one coding problem each day, fostering consistent learning and improving their
+                              technical problem-solving abilities. Interactive sessions were also conducted to discuss
+                              common challenges and solutions.
+                            </p>
+                            <h3 className="text-xl font-semibold mt-6 mb-2">Objective</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>To develop a habit of consistent problem-solving among students.</li>
+                              <li>
+                                To provide hands-on experience with various programming challenges, including basic to
+                                advanced levels.
+                              </li>
+                              <li>To improve analytical and logical thinking skills.</li>
+                              <li>
+                                To enhance technical expertise in preparation for hackathons, placements, and technical
+                                competitions.
+                              </li>
+                              <li>
+                                To cultivate self-discipline and time management through a structured daily challenge.
+                              </li>
+                            </ul>
+                            <h3 className="text-xl font-semibold mt-6 mb-2">Outcome</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>
+                                A total of 127 students successfully completed all 30 days of coding challenges,
+                                demonstrating significant improvements in their programming skills.
+                              </li>
+                              <li>
+                                Participants gained confidence in tackling real-world problems and preparing for coding
+                                competitions.
+                              </li>
+                              <li>
+                                Many students reported better understanding and application of data structures and
+                                algorithms in practical scenarios.
+                              </li>
+                              <li>
+                                The program received positive feedback for motivating consistency and fostering a
+                                collaborative learning environment.
+                              </li>
+                              <li>
+                                Students developed the ability to write clean and optimized code, contributing to their
+                                professional growth.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      ) : selectedEvent.id === 1 || selectedEvent.id === 2 ? (
+                        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+                          <CodeAThonLeaderboard
+                            participants={leaderboardData}
+                            eventName={selectedEvent.name}
+                            onExpand={() => setIsLeaderboardExpanded(true)}
+                            isExpanded={false}
+                          />
+                          {renderCodeAThonDetails()}
+                        </div>
+                      ) : selectedEvent.id >= 3 && selectedEvent.id <= 6 ? (
+                        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+                          <CodeAThonWeekStandings
+                            participants={leaderboardData}
+                            eventName={selectedEvent.name}
+                            onExpand={() => setIsLeaderboardExpanded(true)}
+                            isExpanded={false}
+                          />
+                          {renderCodeAThonDetails()}
+                        </div>
+                      ) : (
+                        <p className="text-center text-gray-300">No data available for this event yet.</p>
+                      )}
+                    </>
+                  )}
+                </div>
+                {shouldShowPhotos(selectedEvent.id) && (
+                  <div className="w-full lg:w-1/3">
+                    <EventPhotos
+                      eventId={selectedEvent.id}
+                      eventName={selectedEvent.name}
+                      onExpand={() => setIsPhotosExpanded(true)}
+                      isExpanded={false}
+                    />
+                  </div>
                 )}
-                <EventPhotos eventId={selectedEvent.id} eventName={selectedEvent.name} />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
+
+      <FullScreenModal
+        isOpen={isLeaderboardExpanded}
+        onClose={() => setIsLeaderboardExpanded(false)}
+        title={`${selectedEvent?.name || "Event"} Leaderboard`}
+      >
+        <div className="max-w-4xl mx-auto">
+          {selectedEvent?.id === 1 || selectedEvent?.id === 2 ? (
+            <CodeAThonLeaderboard
+              participants={leaderboardData}
+              eventName={selectedEvent.name}
+              onExpand={() => {}}
+              isExpanded={true}
+            />
+          ) : selectedEvent?.id >= 3 && selectedEvent?.id <= 6 ? (
+            <CodeAThonWeekStandings
+              participants={leaderboardData}
+              eventName={selectedEvent.name}
+              onExpand={() => {}}
+              isExpanded={true}
+            />
+          ) : null}
+          {renderCodeAThonDetails()}
+        </div>
+      </FullScreenModal>
+
+      <FullScreenModal
+        isOpen={isPhotosExpanded}
+        onClose={() => setIsPhotosExpanded(false)}
+        title={`${selectedEvent?.name || "Event"} Photos`}
+      >
+        <div className="max-w-4xl mx-auto">
+          <EventPhotos
+            eventId={selectedEvent?.id || 0}
+            eventName={selectedEvent?.name || "Event"}
+            onExpand={() => {}}
+            isExpanded={true}
+          />
+        </div>
+      </FullScreenModal>
     </div>
   )
 }

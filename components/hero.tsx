@@ -103,7 +103,7 @@ export default function Hero() {
               href="/events"
               className="px-8 py-3 rounded-full bg-white/10 text-white font-semibold hover:bg-white/20 transition-colors"
             >
-              Contests
+              Events
             </Link>
           </motion.div>
 

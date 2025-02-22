@@ -9,14 +9,14 @@ const faqs = [
       "Zero coding experience? Perfect! We're all about learning together. Whether you're just starting out or already building cool stuff, you'll find your tribe here. Our community is super supportive and we love helping each other level up.",
   },
   {
-    question: "What we do at Developer Club?",
+    question: "What we do here at Developer Club?",
     answer:
       "We run all sorts of awesome events! Think hands-on coding sessions where you'll build real projects, chill coding hangouts to work on stuff together, epic hackathons where you can flex your creativity, and tech talks that'll blow your mind. Plus, we often have industry pros dropping by to share their secrets!",
   },
   {
     question: "Don't wanna miss out? Here's how to stay in the loop",
     answer:
-      "Easy! Jump into our Discord server - that's where all the action happens. We post everything from event announcements to random coding memes. Plus, you'll get instant notifications about workshops, meetups, and all the cool stuff we're planning.",
+      "Easy! Jump into our Whatsapp Group - that's where all the action happens. We post everything from event announcements to random coding memes. Plus, you'll get instant notifications about workshops, meetups, and all the cool stuff we're planning.",
   },
   {
     question: "Built something cool? Show it off!",
@@ -43,15 +43,11 @@ const faqs = [
     answer:
       "Our workshops are super hands-on and beginner-friendly! We typically run them in small groups where you'll actually code along with the instructor. No death by PowerPoint here - just real coding and real learning. Plus, we always have mentors floating around to help if you get stuck.",
   },
-  {
-    question: "Can I collaborate with other members?",
-    answer:
-      "Heck yeah! We're big on collaboration. Join our project channels on Discord, come to our coding hangouts, or pitch your idea during meetups. You'll find plenty of other members excited to team up and build something awesome together!",
-  },
+ 
   {
     question: "What's the best way to start participating?",
     answer:
-      "Jump right in! Join our Discord, come to the next meetup (even if you're nervous - we're super friendly!), or join one of our beginner workshops. The best way to get involved is to just show up and say hi. We promise you'll find your place in no time!",
+      "Jump right in! Come to the next meetup (even if you're nervous - we're super friendly!), or join one of our beginner workshops. The best way to get involved is to just show up and say hi. We promise you'll find your place in no time!",
   },
 ]
 

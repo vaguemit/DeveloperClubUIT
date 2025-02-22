@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { Calendar } from "lucide-react"
 
 interface Event {
