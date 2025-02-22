@@ -14,12 +14,14 @@ export const metadata: Metadata = {
     icon: [
       {
         url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
-        sizes: "32x32",
+        sizes: "192x192",
         type: "image/png",
       },
+    ],
+    shortcut: [
       {
         url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
-        sizes: "16x16",
+        sizes: "192x192",
         type: "image/png",
       },
     ],
@@ -28,6 +30,12 @@ export const metadata: Metadata = {
         url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
         sizes: "180x180",
         type: "image/png",
+      },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
       },
     ],
   },
