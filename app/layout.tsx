@@ -13,21 +13,21 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-01-01_at_22.12.25_a5af34b0-removebg-preview-yjmoQzI26aZjsu00vNdFlLpflwUyU4.png",
         sizes: "192x192",
         type: "image/png",
       },
     ],
     shortcut: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-01-01_at_22.12.25_a5af34b0-removebg-preview-yjmoQzI26aZjsu00vNdFlLpflwUyU4.png",
         sizes: "192x192",
         type: "image/png",
       },
     ],
     apple: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-01-01_at_22.12.25_a5af34b0-removebg-preview-yjmoQzI26aZjsu00vNdFlLpflwUyU4.png",
         sizes: "180x180",
         type: "image/png",
       },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     other: [
       {
         rel: "mask-icon",
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled_design__1_-removebg-preview%20(1)-8wX2A63M2kzdGdI7xCWnUvsBPFZG5F.png",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-01-01_at_22.12.25_a5af34b0-removebg-preview-yjmoQzI26aZjsu00vNdFlLpflwUyU4.png",
       },
     ],
   },
