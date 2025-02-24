@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between py-4">
           {/* Logo section */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center">
               <div className="relative h-24 w-24">
                 <Image
@@ -34,6 +34,20 @@ export default function Navbar() {
                   priority
                 />
               </div>
+            </Link>
+            <Link
+              href="https://uit.karnavatiuniversity.edu.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative h-24 w-48"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20(2)-4fejltQUgnS5fxF563EjjHlgVLRx0Y.png"
+                alt="UIT Logo"
+                fill
+                className="object-contain hover:opacity-80 transition-opacity"
+                priority
+              />
             </Link>
             <Link
               href="https://karnavatiuniversity.edu.in/"
