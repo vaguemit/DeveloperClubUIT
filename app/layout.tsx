@@ -4,8 +4,7 @@ import { Inter } from "next/font/google"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import type { Metadata } from "next"
-import { Analytics } from "@vercel/analytics/react
-"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -54,6 +53,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow pt-36">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
