@@ -11,7 +11,12 @@ export default function CodeforcesLeaderboard() {
     fetch("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/output-dJoH5YhNv7YzpH9jsvpTnDtlkufBCV.json")
       .then((response) => response.json())
       .then((data) => {
-        const sortedData = data
+        // Update darcasterr's rating
+        const updatedData = data.map((entry: LeaderboardEntry) =>
+          entry.handle === "darcasterr" ? { ...entry, rating: 1623 } : entry,
+        )
+
+        const sortedData = updatedData
           .filter((entry: LeaderboardEntry) => entry.rating !== null)
           .sort((a: LeaderboardEntry, b: LeaderboardEntry) => b.rating - a.rating)
         setLeaderboardData(sortedData)
