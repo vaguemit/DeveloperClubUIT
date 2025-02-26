@@ -23,9 +23,9 @@ const events = [
     subtitle: "Unlocking the Power of DSA",
     date: "February 27th, 2025",
     time: "11:30 AM - 1:30 PM",
-    venue: "AI Lab (Above Anticlock)",
+    venue: "M-02, M-Block",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-25%20at%2011.06.12_0a1162c0.jpg-prxBnm1lIgoakhd5kf31Ofs7vrNgEG.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-26%20at%2011.39.46_cdee3e3c.jpg-dQn8CF1SWJ2bl5Lwqedd19Qidasi9K.jpeg",
     description:
       "Sharpen your problem-solving skills and level up your coding game! Join us for an exciting Competitive Programming (CP) & Data Structures & Algorithms (DSA) session.",
     features: [
