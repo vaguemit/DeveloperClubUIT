@@ -13,7 +13,7 @@ export default function CodeforcesLeaderboard() {
       .then((data) => {
         // Update darcasterr's rating
         const updatedData = data.map((entry: LeaderboardEntry) =>
-          entry.handle === "darcasterr" ? { ...entry, rating: 1623, rank: "expert"} : entry,
+          entry.handle === "darcasterr" ? { ...entry, rating: 1807, rank: "expert"} : entry,
         )
 
         const sortedData = updatedData
