@@ -48,6 +48,14 @@ const EventPhotos: React.FC<EventPhotosProps> = ({ eventId, eventName, onExpand,
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250129-WA0013.jpg-FuqkiQW35mT3CotAZuxu8C2iGypnxH.jpeg",
   ]
 
+  // Add the DSA & CP Session photos
+  const dsaSessionPhotos = [
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.36_ac827d4e.jpg-02P2OGB9qXbetWj7DhaJ537ACXvYxZ.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.35_08ca052b.jpg-B2rKTToIsQeNrw8VfepZxAgoWHUNo5.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.36_eb6848fd.jpg-3NJJ5S7eBu8kTworGBTAbA0eZCgq5o.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.36_afd5d3a7.jpg-SXIPW1ZRZTQZAPm4Z2QafRiuNPXy6k.jpeg",
+  ]
+
   // Select photos based on event ID
   const getEventPhotos = () => {
     switch (eventId) {
@@ -59,6 +67,8 @@ const EventPhotos: React.FC<EventPhotosProps> = ({ eventId, eventName, onExpand,
         return week1Photos
       case 4:
         return week2Photos
+      case 8: // DSA & CP Session
+        return dsaSessionPhotos
       default:
         return [
           `/placeholder.svg?height=150&width=150&text=Photo 1`,

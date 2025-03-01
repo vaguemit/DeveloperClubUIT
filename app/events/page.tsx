@@ -10,6 +10,12 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const events = [
   {
+    id: 8,
+    name: "DSA & CP Session",
+    date: "February 27, 2025",
+    startDate: new Date("2025-02-27"),
+  },
+  {
     id: 7,
     name: "30 Days Code Challenge",
     date: "August 21, 2024 - September 26, 2024",
@@ -21,7 +27,7 @@ const events = [
   { id: 4, name: "Code-A-Thon Week 2", date: "January 29, 2025", startDate: new Date("2025-01-29") },
   { id: 5, name: "Code-A-Thon Week 3", date: "February 5, 2025", startDate: new Date("2025-02-05") },
   { id: 6, name: "Code-A-Thon Week 4", date: "February 19, 2025", startDate: new Date("2025-02-19") },
-].sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+].sort((a, b) => b.startDate.getTime() - a.startDate.getTime())
 
 export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(events[0])
@@ -109,7 +115,135 @@ export default function EventsPage() {
   )
 
   const shouldShowPhotos = (eventId: number) => {
-    return eventId === 1 || eventId === 2 || eventId === 3 || eventId === 4
+    return eventId === 1 || eventId === 2 || eventId === 3 || eventId === 4 || eventId === 8
+  }
+
+  const renderEventDetails = () => {
+    if (selectedEvent?.id === 8) {
+      return (
+        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+          <h2 className="text-2xl font-bold text-gray-300 mb-4">DSA & CP Session</h2>
+          <div className="space-y-4">
+            <p>
+              <strong>Date:</strong> February 27, 2025
+            </p>
+            <p>
+              <strong>Time:</strong> 11:30 AM - 1:30 PM
+            </p>
+            <p>
+              <strong>Venue:</strong> M-02, M-block
+            </p>
+            <p>
+              <strong>Description:</strong> Sharpen your problem-solving skills and level up your coding game! Join us
+              for an exciting Competitive Programming (CP) & Data Structures & Algorithms (DSA) session.
+            </p>
+            <h3 className="text-xl font-semibold mt-6 mb-2">What to Expect</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Hands-on problem-solving</li>
+              <li>Algorithm deep dives</li>
+              <li>Contest prep & discussions</li>
+              <li>Peer learning & networking</li>
+            </ul>
+            <h3 className="text-xl font-semibold mt-6 mb-2">Perks</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Attendance will be provided</li>
+              <li>Extended break timings</li>
+            </ul>
+            <h3 className="text-xl font-semibold mt-6 mb-2">Contact</h3>
+            <p>Lithika S: 88666 53379</p>
+            <p>Mit Parikh: 78599 63613</p>
+          </div>
+        </div>
+      )
+    } else if (selectedEvent?.id === 7) {
+      return (
+        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+          <h2 className="text-2xl font-bold text-gray-300 mb-4">{selectedEvent.name}</h2>
+          <div className="space-y-4">
+            <p>
+              <strong>Date:</strong> {selectedEvent.date}
+            </p>
+            <p>
+              <strong>Event Coordinator:</strong> Prof. Manender Dutt
+            </p>
+            <p>
+              <strong>Participants:</strong> 516 (Registered), 127 (Completed)
+            </p>
+            <p>
+              <strong>Mode:</strong> Online (Hackerrank Platform)
+            </p>
+            <h3 className="text-xl font-semibold mt-6 mb-2">Program Description</h3>
+            <p>
+              The "30 Days Code Challenge" was designed as a month-long initiative to help students enhance their coding
+              skills by solving a variety of problems across multiple domains, including algorithms, data structures,
+              web development, and more. Students were required to solve one coding problem each day, fostering
+              consistent learning and improving their technical problem-solving abilities. Interactive sessions were
+              also conducted to discuss common challenges and solutions.
+            </p>
+            <h3 className="text-xl font-semibold mt-6 mb-2">Objective</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>To develop a habit of consistent problem-solving among students.</li>
+              <li>
+                To provide hands-on experience with various programming challenges, including basic to advanced levels.
+              </li>
+              <li>To improve analytical and logical thinking skills.</li>
+              <li>
+                To enhance technical expertise in preparation for hackathons, placements, and technical competitions.
+              </li>
+              <li>To cultivate self-discipline and time management through a structured daily challenge.</li>
+            </ul>
+            <h3 className="text-xl font-semibold mt-6 mb-2">Outcome</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                A total of 127 students successfully completed all 30 days of coding challenges, demonstrating
+                significant improvements in their programming skills.
+              </li>
+              <li>
+                Participants gained confidence in tackling real-world problems and preparing for coding competitions.
+              </li>
+              <li>
+                Many students reported better understanding and application of data structures and algorithms in
+                practical scenarios.
+              </li>
+              <li>
+                The program received positive feedback for motivating consistency and fostering a collaborative learning
+                environment.
+              </li>
+              <li>
+                Students developed the ability to write clean and optimized code, contributing to their professional
+                growth.
+              </li>
+            </ul>
+          </div>
+        </div>
+      )
+    } else if (selectedEvent?.id === 1 || selectedEvent?.id === 2) {
+      return (
+        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+          <CodeAThonLeaderboard
+            participants={leaderboardData}
+            eventName={selectedEvent.name}
+            onExpand={() => setIsLeaderboardExpanded(true)}
+            isExpanded={false}
+          />
+          {renderCodeAThonDetails()}
+        </div>
+      )
+    } else if (selectedEvent?.id >= 3 && selectedEvent?.id <= 6) {
+      return (
+        <div className="bg-black border border-gray-900 p-6 rounded-lg">
+          <CodeAThonWeekStandings
+            participants={leaderboardData}
+            eventName={selectedEvent.name}
+            onExpand={() => setIsLeaderboardExpanded(true)}
+            isExpanded={false}
+          />
+          {renderCodeAThonDetails()}
+        </div>
+      )
+    } else {
+      return <p className="text-center text-gray-300">No data available for this event yet.</p>
+    }
   }
 
   return (
@@ -136,97 +270,7 @@ export default function EventsPage() {
                   ) : error ? (
                     <p className="text-center text-red-500">{error}</p>
                   ) : (
-                    <>
-                      {selectedEvent.id === 7 ? (
-                        <div className="bg-black border border-gray-900 p-6 rounded-lg">
-                          <h2 className="text-2xl font-bold text-gray-300 mb-4">{selectedEvent.name}</h2>
-                          <div className="space-y-4">
-                            <p>
-                              <strong>Date:</strong> {selectedEvent.date}
-                            </p>
-                            <p>
-                              <strong>Event Coordinator:</strong> Prof. Manender Dutt
-                            </p>
-                            <p>
-                              <strong>Participants:</strong> 516 (Registered), 127 (Completed)
-                            </p>
-                            <p>
-                              <strong>Mode:</strong> Online (Hackerrank Platform)
-                            </p>
-                            <h3 className="text-xl font-semibold mt-6 mb-2">Program Description</h3>
-                            <p>
-                              The "30 Days Code Challenge" was designed as a month-long initiative to help students
-                              enhance their coding skills by solving a variety of problems across multiple domains,
-                              including algorithms, data structures, web development, and more. Students were required
-                              to solve one coding problem each day, fostering consistent learning and improving their
-                              technical problem-solving abilities. Interactive sessions were also conducted to discuss
-                              common challenges and solutions.
-                            </p>
-                            <h3 className="text-xl font-semibold mt-6 mb-2">Objective</h3>
-                            <ul className="list-disc pl-5 space-y-2">
-                              <li>To develop a habit of consistent problem-solving among students.</li>
-                              <li>
-                                To provide hands-on experience with various programming challenges, including basic to
-                                advanced levels.
-                              </li>
-                              <li>To improve analytical and logical thinking skills.</li>
-                              <li>
-                                To enhance technical expertise in preparation for hackathons, placements, and technical
-                                competitions.
-                              </li>
-                              <li>
-                                To cultivate self-discipline and time management through a structured daily challenge.
-                              </li>
-                            </ul>
-                            <h3 className="text-xl font-semibold mt-6 mb-2">Outcome</h3>
-                            <ul className="list-disc pl-5 space-y-2">
-                              <li>
-                                A total of 127 students successfully completed all 30 days of coding challenges,
-                                demonstrating significant improvements in their programming skills.
-                              </li>
-                              <li>
-                                Participants gained confidence in tackling real-world problems and preparing for coding
-                                competitions.
-                              </li>
-                              <li>
-                                Many students reported better understanding and application of data structures and
-                                algorithms in practical scenarios.
-                              </li>
-                              <li>
-                                The program received positive feedback for motivating consistency and fostering a
-                                collaborative learning environment.
-                              </li>
-                              <li>
-                                Students developed the ability to write clean and optimized code, contributing to their
-                                professional growth.
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      ) : selectedEvent.id === 1 || selectedEvent.id === 2 ? (
-                        <div className="bg-black border border-gray-900 p-6 rounded-lg">
-                          <CodeAThonLeaderboard
-                            participants={leaderboardData}
-                            eventName={selectedEvent.name}
-                            onExpand={() => setIsLeaderboardExpanded(true)}
-                            isExpanded={false}
-                          />
-                          {renderCodeAThonDetails()}
-                        </div>
-                      ) : selectedEvent.id >= 3 && selectedEvent.id <= 6 ? (
-                        <div className="bg-black border border-gray-900 p-6 rounded-lg">
-                          <CodeAThonWeekStandings
-                            participants={leaderboardData}
-                            eventName={selectedEvent.name}
-                            onExpand={() => setIsLeaderboardExpanded(true)}
-                            isExpanded={false}
-                          />
-                          {renderCodeAThonDetails()}
-                        </div>
-                      ) : (
-                        <p className="text-center text-gray-300">No data available for this event yet.</p>
-                      )}
-                    </>
+                    <>{renderEventDetails()}</>
                   )}
                 </div>
                 {shouldShowPhotos(selectedEvent.id) && (
