@@ -68,7 +68,12 @@ const EventPhotos: React.FC<EventPhotosProps> = ({ eventId, eventName, onExpand,
       case 4:
         return week2Photos
       case 8: // DSA & CP Session
-        return dsaSessionPhotos
+        return [
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.36_ac827d4e.jpg-02P2OGB9qXbetWj7DhaJ537ACXvYxZ.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.35_08ca052b.jpg-B2rKTToIsQeNrw8VfepZxAgoWHUNo5.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.36_eb6848fd.jpg-3NJJ5S7eBu8kTworGBTAbA0eZCgq5o.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-28%20at%2019.43.36_afd5d3a7.jpg-SXIPW1ZRZTQZAPm4Z2QafRiuNPXy6k.jpeg",
+        ]
       default:
         return [
           `/placeholder.svg?height=150&width=150&text=Photo 1`,
@@ -85,8 +90,8 @@ const EventPhotos: React.FC<EventPhotosProps> = ({ eventId, eventName, onExpand,
   // Function to determine if expand button should be shown
   const shouldShowExpandButton = () => {
     if (!isExpanded) {
-      // Always show expand button for Round 1 and Round 2
-      if (eventId === 1 || eventId === 2) {
+      // Always show expand button for Round 1, Round 2, and DSA & CP Session
+      if (eventId === 1 || eventId === 2 || eventId === 8) {
         return true
       }
       // For other events, show only if there are more than 4 photos

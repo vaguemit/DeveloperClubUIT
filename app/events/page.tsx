@@ -122,7 +122,7 @@ export default function EventsPage() {
     if (selectedEvent?.id === 8) {
       return (
         <div className="bg-black border border-gray-900 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-gray-300 mb-4">DSA & CP Session</h2>
+          <h2 className="text-2xl font-bold text-gray-300 mb-4">DSA & CP Session - Week 1</h2>
           <div className="space-y-4">
             <p>
               <strong>Date:</strong> February 27, 2025
@@ -134,19 +134,19 @@ export default function EventsPage() {
               <strong>Venue:</strong> M-02, M-block
             </p>
             <p>
-              <strong>Description:</strong> Sharpen your problem-solving skills and level up your coding game! Join us
-              for an exciting Competitive Programming (CP) & Data Structures & Algorithms (DSA) session.
+              <strong>Description:</strong> We kicked off our Weekly CP & DSA Training Series with an amazing Week 1
+              session, and it was a great success! 🎉
             </p>
-            <h3 className="text-xl font-semibold mt-6 mb-2">What to Expect</h3>
+            <h3 className="text-xl font-semibold mt-6 mb-2">What we covered:</h3>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Hands-on problem-solving</li>
-              <li>Algorithm deep dives</li>
-              <li>Contest prep & discussions</li>
-              <li>Peer learning & networking</li>
+              <li>Introduction to time complexity - Understanding how to manage time complexity in algorithms</li>
+              <li>Introduction to Space Complexity – Understanding memory usage in algorithms</li>
+              <li>Deep dive into STL for CP – Exploring useful data structures for efficient coding</li>
+              <li>Hands-on problem-solving session – Tackling real CP problems with optimized approaches</li>
             </ul>
             <h3 className="text-xl font-semibold mt-6 mb-2">Perks</h3>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Attendance will be provided</li>
+              <li>Attendance provided</li>
               <li>Extended break timings</li>
             </ul>
             <h3 className="text-xl font-semibold mt-6 mb-2">Contact</h3>
