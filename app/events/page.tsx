@@ -8,6 +8,57 @@ import EventPhotos from "@/components/event-photos"
 import FullScreenModal from "@/components/full-screen-modal"
 import { motion, AnimatePresence } from "framer-motion"
 
+const weeklyLeaderboards = {
+  3: [
+    { rank: 1, handle: "Manthan14", problems_solved: 4, penalty: 332 },
+    { rank: 2, handle: "MeetSavlani", problems_solved: 3, penalty: 170 },
+    { rank: 3, handle: "RitikaRamwani", problems_solved: 3, penalty: 192 },
+    { rank: 4, handle: "kushsaraf", problems_solved: 3, penalty: 200 },
+    { rank: 5, handle: "Justarookie12", problems_solved: 3, penalty: 210 },
+    { rank: 6, handle: "Rudra1528", problems_solved: 3, penalty: 220 },
+    { rank: 7, handle: "RAZV3ER", problems_solved: 3, penalty: 230 },
+    { rank: 8, handle: "AGENT_77", problems_solved: 3, penalty: 240 },
+    { rank: 9, handle: "Rish164", problems_solved: 3, penalty: 250 },
+    { rank: 10, handle: "parthrajsinh_gohil", problems_solved: 3, penalty: 260 },
+  ],
+  4: [
+    { rank: 1, handle: "MeetSavlani", problems_solved: 5, penalty: 175 },
+    { rank: 2, handle: "Justarookie12", problems_solved: 5, penalty: 194 },
+    { rank: 3, handle: "Rudra1528", problems_solved: 5, penalty: 226 },
+    { rank: 4, handle: "Manthan14", problems_solved: 5, penalty: 230 },
+    { rank: 5, handle: "kushsaraf", problems_solved: 5, penalty: 240 },
+    { rank: 6, handle: "RitikaRamwani", problems_solved: 5, penalty: 250 },
+    { rank: 7, handle: "RAZV3ER", problems_solved: 5, penalty: 260 },
+    { rank: 8, handle: "AGENT_77", problems_solved: 5, penalty: 270 },
+    { rank: 9, handle: "Rish164", problems_solved: 5, penalty: 280 },
+    { rank: 10, handle: "parthrajsinh_gohil", problems_solved: 5, penalty: 290 },
+  ],
+  5: [
+    { rank: 1, handle: "kushsaraf", problems_solved: 5, penalty: 108 },
+    { rank: 2, handle: "Justarookie12", problems_solved: 5, penalty: 153 },
+    { rank: 3, handle: "MeetSavlani", problems_solved: 5, penalty: 204 },
+    { rank: 4, handle: "Manthan14", problems_solved: 5, penalty: 210 },
+    { rank: 5, handle: "Rudra1528", problems_solved: 5, penalty: 220 },
+    { rank: 6, handle: "RitikaRamwani", problems_solved: 5, penalty: 230 },
+    { rank: 7, handle: "RAZV3ER", problems_solved: 5, penalty: 240 },
+    { rank: 8, handle: "AGENT_77", problems_solved: 5, penalty: 250 },
+    { rank: 9, handle: "Rish164", problems_solved: 5, penalty: 260 },
+    { rank: 10, handle: "parthrajsinh_gohil", problems_solved: 5, penalty: 270 },
+  ],
+  6: [
+    { rank: 1, handle: "Justarookie12", problems_solved: 5, penalty: 81 },
+    { rank: 2, handle: "Manthan14", problems_solved: 5, penalty: 118 },
+    { rank: 3, handle: "MeetSavlani", problems_solved: 5, penalty: 131 },
+    { rank: 4, handle: "kushsaraf", problems_solved: 5, penalty: 140 },
+    { rank: 5, handle: "Rudra1528", problems_solved: 5, penalty: 150 },
+    { rank: 6, handle: "RitikaRamwani", problems_solved: 5, penalty: 160 },
+    { rank: 7, handle: "RAZV3ER", problems_solved: 5, penalty: 170 },
+    { rank: 8, handle: "AGENT_77", problems_solved: 5, penalty: 180 },
+    { rank: 9, handle: "Rish164", problems_solved: 5, penalty: 190 },
+    { rank: 10, handle: "parthrajsinh_gohil", problems_solved: 5, penalty: 200 },
+  ],
+}
+
 const events = [
   {
     id: 8,
@@ -230,10 +281,17 @@ export default function EventsPage() {
         </div>
       )
     } else if (selectedEvent?.id >= 3 && selectedEvent?.id <= 6) {
+      // Code-A-Thon Weeks 1 to 4
+      const weekData = weeklyLeaderboards[selectedEvent.id]
       return (
         <div className="bg-black border border-gray-900 p-6 rounded-lg">
           <CodeAThonWeekStandings
-            participants={leaderboardData}
+            participants={weekData.map((entry) => ({
+              rank: entry.rank,
+              name: entry.handle,
+              problemsSolved: entry.problems_solved,
+              penalty: entry.penalty,
+            }))}
             eventName={selectedEvent.name}
             onExpand={() => setIsLeaderboardExpanded(true)}
             isExpanded={false}
@@ -245,6 +303,19 @@ export default function EventsPage() {
       return <p className="text-center text-gray-300">No data available for this event yet.</p>
     }
   }
+
+  const weeklyData = [
+    { name: "Justarookie12", count: 3, rating: 197.74 },
+    { name: "Manthan14", count: 4, rating: 193.22 },
+    { name: "MeetSavlani", count: 4, rating: 183.36 },
+    { name: "kushsaraf", count: 4, rating: 167.75 },
+    { name: "Rudra1528", count: 3, rating: 152.96 },
+    { name: "RAZV3ER", count: 4, rating: 151.77 },
+    { name: "AGENT_77", count: 3, rating: 115.73 },
+    { name: "Rish164", count: 2, rating: 104.76 },
+    { name: "parthrajsinh_gohil", count: 3, rating: 102.67 },
+    { name: "RitikaRamwani", count: 4, rating: 92.72 },
+  ]
 
   return (
     <div className="min-h-screen bg-black text-gray-400 py-16">
@@ -304,7 +375,12 @@ export default function EventsPage() {
             />
           ) : selectedEvent?.id >= 3 && selectedEvent?.id <= 6 ? (
             <CodeAThonWeekStandings
-              participants={leaderboardData}
+              participants={weeklyLeaderboards[selectedEvent.id].map((entry) => ({
+                rank: entry.rank,
+                name: entry.handle,
+                problemsSolved: entry.problems_solved,
+                penalty: entry.penalty,
+              }))}
               eventName={selectedEvent.name}
               onExpand={() => {}}
               isExpanded={true}
