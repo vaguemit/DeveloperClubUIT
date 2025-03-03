@@ -61,6 +61,12 @@ const weeklyLeaderboards = {
 
 const events = [
   {
+    id: 9,
+    name: "Pitch-A-Thon 2025",
+    date: "February 28, 2025",
+    startDate: new Date("2025-02-28"),
+  },
+  {
     id: 8,
     name: "DSA & CP Session",
     date: "February 27, 2025",
@@ -151,7 +157,7 @@ export default function EventsPage() {
         Code-A-Thon is meticulously designed to empower students, allowing them to refine their coding prowess, nurture
         their problem-solving abilities, and unleash their boundless creativity. The Code-A-thon will challenge
         participants to tackle intricate coding problems within a limited timeframe, cultivating critical thinking and
-        the effective application of coding knowledge. The Code-A-Thon will inspire students to compete with their
+        the effective application of coding knowledge. The Code-A-thon will inspire students to compete with their
         peers, motivating them to strive for coding excellence. Participants will have the golden opportunity to connect
         with like-minded individuals, exchange innovative ideas, and forge lasting connections. Code-A-Thon welcomes
         students from all branches and years, fostering diversity and unity among students with varied backgrounds.
@@ -170,7 +176,81 @@ export default function EventsPage() {
   }
 
   const renderEventDetails = () => {
-    if (selectedEvent?.id === 8) {
+    if (selectedEvent?.id === 9) {
+      return (
+        <div className="bg-black border border-gray-900 p-6 rounded-lg space-y-6">
+          <h2 className="text-2xl font-bold text-gray-300 mb-4">Pitch-A-Thon 2025</h2>
+          <div className="space-y-4">
+            <p>
+              <strong>Date:</strong> February 28, 2025
+            </p>
+            <p>
+              <strong>Venue:</strong> UIT Campus
+            </p>
+            <p>
+              <strong>Introduction:</strong> The Developer Club, UIT, in collaboration with KIIF, successfully organized
+              Pitch-A-Thon 2025. This event provided a dynamic platform for students to present their innovative ideas
+              and receive expert feedback.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-300">Event Highlights:</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>100+ teams registered for the event.</li>
+              <li>78 teams successfully pitched their ideas.</li>
+              <li>
+                Expert Jury Panel: Comprised of three teams, including an Industry Expert, a KIIF Representative, and an
+                Internal Jury.
+              </li>
+              <li>5+ themes explored, fostering creativity and entrepreneurial thinking.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-300">Acknowledgments:</h3>
+            <p>
+              Dean Dr. Kusum Lata Agarwal appreciated the initiative, emphasizing its role in nurturing creativity and
+              reinforcing UIT's commitment to innovation. External jury members commended the students for their
+              well-researched ideas and confident pitching.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-300">Event Schedule:</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>9:45 AM - 10:30 AM: Opening Ceremony</li>
+              <li>11:30 AM - 1:00 PM: Phase 1 Pitching</li>
+              <li>1:00 PM - 2:00 PM: Lunch Break</li>
+              <li>2:00 PM - 4:30 PM: Phase 2 Pitching</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-300">Judging Criteria:</h3>
+            <p>Each pitch was evaluated based on six key aspects, each rated on a 10-point scale:</p>
+            <ol className="list-decimal pl-5 space-y-2">
+              <li>Problem Identification</li>
+              <li>Solution and Value Proposition</li>
+              <li>Execution, Plan, and Milestones</li>
+              <li>Pitch Delivery and Presentation</li>
+              <li>Q/A Handling</li>
+              <li>Implementation</li>
+            </ol>
+
+            <h3 className="text-xl font-semibold text-gray-300">Organizing Team:</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Event Coordinators: Prof. Manender Dutt</li>
+              <li>Student Lead: Vihaan malani</li>
+              <li>Digital Outreach: Shaurya Jain, Palak Dwivedi</li>
+              <li>Technical Team: Uday Sharma, Vihir Shah</li>
+              <li>Volunteer Leads: Harsh Singh, Yash Prajapati</li>
+              <li>Volunteers: Lithika, Punya Chopra, Prenya Patel</li>
+              <li>Creative: Raj Patel, Shubham Patel</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-300">Conclusion:</h3>
+            <p>
+              Pitch-A-Thon 2025 successfully provided a stage for students to refine their ideas and gain industry
+              insights. The event reinforced UIT's mission of fostering innovation and entrepreneurial spirit, ensuring
+              students are well-equipped for future challenges.
+            </p>
+          </div>
+        </div>
+      )
+    } else if (selectedEvent?.id === 8) {
       return (
         <div className="bg-black border border-gray-900 p-6 rounded-lg">
           <h2 className="text-2xl font-bold text-gray-300 mb-4">DSA & CP Session - Week 1</h2>
