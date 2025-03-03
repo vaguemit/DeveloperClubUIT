@@ -59,6 +59,15 @@ const EventPhotos: React.FC<EventPhotosProps> = ({ eventId, eventName, onExpand,
   // Select photos based on event ID
   const getEventPhotos = () => {
     switch (eventId) {
+      case 9: // Pitch-A-Thon
+        return [
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/04a14ff7-3dea-4feb-93f3-d98cf33e04f0.jpg-pwaheJ4UDPRT5Y6Q4aMOwN3TAZnT78.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f413ed68-4016-4529-9497-97acbed064e1.jpg-dKauJKV3nEoGJLSz6uCM9g4HXt4nPi.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/babf5bee-be3e-4fe9-86d3-b1c39302f0ce.jpg-Io3LPLowyy5J9Ibefv30bEE62wKS57.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0155.JPG-OXQlIvuUfvPaNzsy3lBG9x51W9zSTM.jpeg",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kku1eQik1LTnFMuWAmrH6LM66Zzv7K.png",
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3028.jpg-IFw4SE37CxItEsm5va6i4LtpOkhPQ8.jpeg",
+        ]
       case 1:
         return round1Photos
       case 2:

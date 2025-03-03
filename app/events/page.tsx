@@ -172,7 +172,7 @@ export default function EventsPage() {
   )
 
   const shouldShowPhotos = (eventId: number) => {
-    return eventId === 1 || eventId === 2 || eventId === 3 || eventId === 4 || eventId === 8
+    return eventId === 1 || eventId === 2 || eventId === 3 || eventId === 4 || eventId === 8 || eventId === 9
   }
 
   const renderEventDetails = () => {
