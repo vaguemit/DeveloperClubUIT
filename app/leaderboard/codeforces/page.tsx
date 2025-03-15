@@ -11,10 +11,15 @@ export default function CodeforcesLeaderboard() {
     fetch("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/output-dJoH5YhNv7YzpH9jsvpTnDtlkufBCV.json")
       .then((response) => response.json())
       .then((data) => {
-        // Update darcasterr's rating
-        const updatedData = data.map((entry: LeaderboardEntry) =>
-          entry.handle === "darcasterr" ? { ...entry, rating: 1807, rank: "expert"} : entry,
-        )
+        // Update darcasterr's and kushsaraf's ratings and ranks
+        const updatedData = data.map((entry: LeaderboardEntry) => {
+          if (entry.handle === "darcasterr") {
+            return { ...entry, rating: 2005, rank: "candidate master" }
+          } else if (entry.handle === "kushsaraf") {
+            return { ...entry, rating: 898, rank: "newbie" }
+          }
+          return entry
+        })
 
         const sortedData = updatedData
           .filter((entry: LeaderboardEntry) => entry.rating !== null)
