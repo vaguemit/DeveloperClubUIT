@@ -117,7 +117,8 @@ export default function UpcomingEventsPage() {
                     <strong>Prize Pool:</strong> Exciting cash prizes & exclusive goodies for the winners!
                   </p>
                   <p className="mb-4">
-                    <strong>Contact:</strong> Sarjak Patel (9429084258) | Yash Wadhvani (9904366478)
+                    <strong>Contact:</strong> Sarjak Patel (9429084258) | Yash Wadhvani (9904366478) | Mit Parikh
+                    (7859963613) | Lithika S (8866653379)
                   </p>
                 </div>
               </div>
@@ -133,7 +134,7 @@ export default function UpcomingEventsPage() {
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
                 <a
-                  href="https://ariaro.karnavatiuniversity.edu.in/register"
+                  href="https://lu.ma/vhnta5e5?from=embed"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center px-6 py-3 bg-white/10 text-white font-medium rounded-full hover:bg-white/20 transition-all"
