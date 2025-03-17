@@ -56,3 +56,18 @@ export interface TeamCategory {
   members: TeamMember[]
 }
 
+export interface Member {
+  id: string
+  created_at: string
+  name: string
+  role: string
+  image: string
+  categoryId: string
+  social: {
+    twitter?: string
+    instagram?: string
+    github?: string
+    linkedin?: string
+  }
+}
+
